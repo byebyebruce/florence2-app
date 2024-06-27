@@ -1,11 +1,11 @@
-# Florence2 Demo
+# Florence2 App
 
 > 本项目是将[Microsoft Florence2](https://huggingface.co/microsoft/Florence-2-large)([Paper](https://arxiv.org/abs/2311.06242) | [Model](https://huggingface.co/microsoft/Florence-2-large) | [Notebook](https://huggingface.co/microsoft/Florence-2-large/blob/main/sample_inference.ipynb)) 模型封装成 Flask 的 API 和 CLI 工具 。它可以完成多种[视觉任务](#支持视觉任务列表)，如生成描述，执行目标检测、OCR 等。
 
 
 ## 功能特点
-- **API 模式**：提供一个端点来处理图像，并根据任务返回预测结果。
-- **CLI 模式**：允许用户通过命令行直接输入任务和图像路径。
+- **API 模式**：提供一个API Server来处理图像任务请求。
+- **CLI 模式**：用户通过命令行直接输入任务和图像路径。
 
 ## 安装
 
@@ -49,7 +49,7 @@ curl -X POST http://localhost:5000/api/predict \
     -F "task=CAPTION"
 ```
 
-3. 
+3. 特定区域分割
 ```sh
 curl -X POST http://localhost:5000/api/predict \
     -F "image=@testdata/car.jpg" \
